@@ -11,8 +11,19 @@ Proxy ADempiere-API
 A simple proxy for synchronize ADempiere Backend based on [ADempiere-gRPC-Server](https://github.com/adempiere/adempiere-gRPC-Server) with any frontend using api REST ans GraphQL.
 
 
-### Using Docker hub images
+### For all enviroment you should run the follow images:
+- ADempiere gRPC: https://hub.docker.com/r/erpya/adempiere-grpc-all-in-one
+```shell
+docker pull erpya/adempiere-grpc-all-in-one
+```
 - Proxy ADempiere API: https://hub.docker.com/r/erpya/proxy-adempiere-api
+```shell
+docker pull erpya/proxy-adempiere-api
+```
+- ADempiere Vue: https://hub.docker.com/r/erpya/adempiere-vue
+```shell
+docker pull erpya/adempiere-vue
+```
 
 Run the latest container with:
 ```shell
