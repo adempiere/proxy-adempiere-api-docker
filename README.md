@@ -32,7 +32,7 @@ Run the latest container with:
 
 ```shell
 docker run -it \
-    --name ADempiere-Proxy-API \
+    --name Proxy-ADempiere-API \
 	-p 8085:8085 \
-	erpya/adempiere-proxy-adempiere-api
+	erpya/proxy-adempiere-adempiere-api
 ```
