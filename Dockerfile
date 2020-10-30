@@ -30,6 +30,7 @@ RUN mkdir -p /var/www/ && \
 	mv $BINARY_NAME $REPO_NAME && \
 	rm $BINARY_NAME.zip && \
 	cd $REPO_NAME && \
+	cp -rf ./packages/default-vsf ./src/modules && \
 	cp ./docker/proxy-api/proxy-api.sh /usr/local/bin/ && \
 	yarn install --no-cache && \
 	apk del .build-deps
