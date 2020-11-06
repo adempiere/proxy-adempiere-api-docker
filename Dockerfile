@@ -3,7 +3,7 @@ FROM node:10-alpine3.11
 LABEL maintainer="EdwinBetanc0urt@outlook.com" \
         description="Proxy ADempiere API RESTful"
 
-ARG BASE_VERSION="rt-1.0"
+ARG BASE_VERSION="rt-1.1"
 
 ENV VS_ENV=prod \
         REPO_NAME="proxy-adempiere-api" \
@@ -21,8 +21,8 @@ ENV VS_ENV=prod \
         AD_STOREUSER="store" \
         AD_STOREPASS="store" \
         AD_ACCESSAPIHOST="localhost" \
-        AD_STOREHOST="localhost" 
-        
+        AD_STOREHOST="localhost"
+
 RUN mkdir -p /var/www/ && \
         cd /var/www/ && \
         echo "nameserver 8.8.8.8" > /etc/resolv.conf && \
@@ -75,7 +75,3 @@ CMD sed -i "s|SERVER_HOST|$SERVER_HOST|g"  /var/www/proxy-adempiere-api/config/d
     sed -i "s|AD_ACCESSAPIHOST|$AD_ACCESSAPIHOST|g"  /var/www/proxy-adempiere-api/config/default.json && \
     sed -i "s|AD_STOREHOST|$AD_STOREHOST|g"  /var/www/proxy-adempiere-api/config/default.json && \
     sh /usr/local/bin/proxy-api.sh && tail -f /dev/null
-
-
-
-
