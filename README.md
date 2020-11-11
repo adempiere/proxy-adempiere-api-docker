@@ -34,5 +34,16 @@ Run the latest container with:
 docker run -it \
     --name Proxy-ADempiere-API \
 	-p 8085:8085 \
+	-e "ES_PORT=9200" \
+	-e "ES_HOST=localhost" \
+	-e "SERVER_PORT=8080" \
+	-e "SERVER_HOST=localhost" \
+	-e "AD_BUSINESSHOST=localhost" \
+	-e "AD_ACCESSHOST=localhost" \
+	-e "AD_DICTIONARYHOST=localhost" \
+	-e "AD_ACCESSAPIHOST=localhost" \
+	-e "AD_STOREHOST=localhost" \
+	-e "VS_ENV=dev"
 	erpya/proxy-adempiere-api
 ```
+
