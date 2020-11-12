@@ -1,7 +1,7 @@
 {
   "server": {
     "host": "SERVER_HOST",
-    "port": SERVER_PORT,
+    "port": "SERVER_PORT",
     "searchEngine": "elasticsearch",
     "useOutputCacheTagging": false,
     "useOutputCache": false,
@@ -20,7 +20,7 @@
   },
   "elasticsearch": {
     "host": "ES_HOST",
-    "port": ES_PORT,
+    "port": "ES_PORT",
     "protocol": "http",
     "requestTimeout": 5000,
     "min_score": 0.01,
