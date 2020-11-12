@@ -31,12 +31,12 @@ Run the latest container with:
 ```
 
 ```shell
-docker run -it \
+docker run -it -d \
     --name Proxy-ADempiere-API \
 	-p 8085:8085 \
 	-e "ES_PORT=9200" \
 	-e "ES_HOST=localhost" \
-	-e "SERVER_PORT=8080" \
+	-e "SERVER_PORT=8085" \
 	-e "SERVER_HOST=localhost" \
 	-e "AD_BUSINESSHOST=localhost" \
 	-e "AD_ACCESSHOST=localhost" \
