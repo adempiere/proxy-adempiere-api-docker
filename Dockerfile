@@ -3,7 +3,7 @@ FROM node:10-alpine3.11
 LABEL maintainer="EdwinBetanc0urt@outlook.com" \
         description="Proxy ADempiere API RESTful"
 
-ARG BASE_VERSION="rt-1.3"
+ARG BASE_VERSION="rt-1.4"
 
 ENV VS_ENV=prod \
         REPO_NAME="proxy-adempiere-api" \
