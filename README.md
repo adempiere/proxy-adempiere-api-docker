@@ -43,7 +43,7 @@ docker run -it -d \
 	-e "AD_DICTIONARYHOST=localhost" \
 	-e "AD_ACCESSAPIHOST=localhost" \
 	-e "AD_STOREHOST=localhost" \
-	-e "VS_ENV=dev"
+	-e "VS_ENV=dev" \
 	erpya/proxy-adempiere-api
 ```
 
