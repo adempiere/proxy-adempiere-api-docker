@@ -18,8 +18,8 @@ ENV VS_ENV=prod \
         AD_BUSINESSHOST="localhost" \
         AD_DICTIONARYHOST="localhost" \
         AD_ACCESSAPIHOST="localhost" \
-        AD_STOREHOST="localhost"
-        AD_STORETOKEN="adempiere_store_token" \
+        AD_STOREHOST="localhost" \
+        AD_STORETOKEN="adempiere_store_token"
 
 RUN mkdir -p /var/www/ && \
         cd /var/www/ && \
