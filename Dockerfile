@@ -13,15 +13,13 @@ ENV VS_ENV=prod \
         SERVER_PORT="8085" \
         ES_HOST="localhost" \
         ES_PORT="9200" \
-        AD_USER="store" \
-        AD_PASS="store" \
+        AD_TOKEN="adempiere_token" \
         AD_ACCESSHOST="localhost" \
         AD_BUSINESSHOST="localhost" \
         AD_DICTIONARYHOST="localhost" \
-        AD_STOREUSER="store" \
-        AD_STOREPASS="store" \
         AD_ACCESSAPIHOST="localhost" \
         AD_STOREHOST="localhost"
+        AD_STORETOKEN="adempiere_store_token" \
 
 RUN mkdir -p /var/www/ && \
         cd /var/www/ && \
@@ -65,13 +63,11 @@ CMD sed -i "s|SERVER_HOST|$SERVER_HOST|g"  /var/www/proxy-adempiere-api/config/d
     sed -i "s|SERVER_PORT|$SERVER_PORT|g"  /var/www/proxy-adempiere-api/config/default.json && \
     sed -i "s|ES_HOST|$ES_HOST|g"  /var/www/proxy-adempiere-api/config/default.json && \
     sed -i "s|ES_PORT|$ES_PORT|g"  /var/www/proxy-adempiere-api/config/default.json && \
-    sed -i "s|AD_USER|$AD_USER|g"  /var/www/proxy-adempiere-api/config/default.json && \
-    sed -i "s|AD_PASS|$AD_PASS|g"  /var/www/proxy-adempiere-api/config/default.json && \
+    sed -i "s|adempiere_token|$AD_TOKEN|g"  /var/www/proxy-adempiere-api/config/default.json && \
+    sed -i "s|adempiere_store_token|$AD_STORETOKEN|g"  /var/www/proxy-adempiere-api/config/default.json && \
     sed -i "s|AD_ACCESSHOST|$AD_ACCESSHOST|g"  /var/www/proxy-adempiere-api/config/default.json && \
     sed -i "s|AD_BUSINESSSHOST|$AD_BUSINESSHOST|g"  /var/www/proxy-adempiere-api/config/default.json && \
     sed -i "s|AD_DICTIONARYHOST|$AD_DICTIONARYHOST|g"  /var/www/proxy-adempiere-api/config/default.json && \
-    sed -i "s|AD_STOREUSER|$AD_STOREUSER|g"  /var/www/proxy-adempiere-api/config/default.json && \
-    sed -i "s|AD_STOREPASS|$AD_STOREPASS|g"  /var/www/proxy-adempiere-api/config/default.json && \
     sed -i "s|AD_ACCESSAPIHOST|$AD_ACCESSAPIHOST|g"  /var/www/proxy-adempiere-api/config/default.json && \
     sed -i "s|AD_STOREHOST|$AD_STOREHOST|g"  /var/www/proxy-adempiere-api/config/default.json && \
     sh /usr/local/bin/proxy-api.sh && tail -f /dev/null
