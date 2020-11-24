@@ -322,8 +322,7 @@
   },
   "adempiereApi": {
     "api": {
-      "user": "AD_USER",
-      "password": "AD_PASS",
+      "token": "adempiere_token",
       "accessHost": "AD_ACCESSHOST:50059",
       "businessHost": "AD_BUSINESSSHOST:50059",
       "dictionaryHost": "AD_DICTIONARYHOST:50059",
@@ -333,8 +332,7 @@
   },
   "adempiereStore": {
     "api": {
-      "user": "AD_STOREUSER",
-      "password": "AD_STOREPASS",
+      "token": "adempiere_store_token",
       "accessHost": "AD_ACCESSAPIHOST:50059",
       "storeHost": "AD_STOREHOST:50059",
       "language": "en_US",
