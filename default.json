@@ -270,7 +270,8 @@
       "registeredExtensions": [
       ],
       "images": {
-        "baseUrl": "http://localhost"
+        "baseUrl": "http://API_URL_IMAGES",
+        "httpBased": API_HTTP_BASED
       }
     },
     "adempiereStore": {
@@ -278,7 +279,8 @@
         "web-store-payment"
       ],
       "images": {
-        "baseUrl": "http://localhost"
+        "baseUrl": "http://STORE_URL_IMAGES",
+        "httpBased": STORE_HTTP_BASED
       }
     },
     "sampleApi": {
