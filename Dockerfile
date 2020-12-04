@@ -19,7 +19,12 @@ ENV VS_ENV=prod \
         AD_DICTIONARYHOST="localhost" \
         AD_ACCESSAPIHOST="localhost" \
         AD_STOREHOST="localhost" \
-        AD_STORETOKEN="adempiere_store_token"
+        AD_STORETOKEN="adempiere_store_token" \
+        API_URL_IMAGES="localhost" \
+        API_HTTP_BASED="false" \
+        STORE_URL_IMAGES="localhost" \
+        STORE_HTTP_BASED="false"
+
 
 RUN mkdir -p /var/www/ && \
         cd /var/www/ && \
@@ -69,5 +74,9 @@ CMD sed -i "s|SERVER_HOST|$SERVER_HOST|g"  /var/www/proxy-adempiere-api/config/d
     sed -i "s|AD_BUSINESSSHOST|$AD_BUSINESSHOST|g"  /var/www/proxy-adempiere-api/config/default.json && \
     sed -i "s|AD_DICTIONARYHOST|$AD_DICTIONARYHOST|g"  /var/www/proxy-adempiere-api/config/default.json && \
     sed -i "s|AD_ACCESSAPIHOST|$AD_ACCESSAPIHOST|g"  /var/www/proxy-adempiere-api/config/default.json && \
-    sed -i "s|AD_STOREHOST|$AD_STOREHOST|g"  /var/www/proxy-adempiere-api/config/default.json && \
+    sed -i "s|AD_STOREHOST|$AD_STOREHOST|g"  /var/www/proxy-adempiere-api/config/default.json && \\
+    sed -i "s|API_URL_IMAGES|$API_URL_IMAGES|g"  /var/www/proxy-adempiere-api/config/default.json && \\
+    sed -i "s|API_HTTP_BASED|$API_HTTP_BASED|g"  /var/www/proxy-adempiere-api/config/default.json && \\
+    sed -i "s|STORE_URL_IMAGES|$STORE_URL_IMAGES|g"  /var/www/proxy-adempiere-api/config/default.json && \\
+    sed -i "s|STORE_HTTP_BASED|$STORE_HTTP_BASED|g"  /var/www/proxy-adempiere-api/config/default.json && \
     sh /usr/local/bin/proxy-api.sh && tail -f /dev/null
