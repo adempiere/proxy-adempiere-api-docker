@@ -69,10 +69,10 @@ docker run -it -d \
 * **`AD_STORE_HOST`**: If not set it takes the value of `AD_DEFAULT_HOST`, it is used to indicate the host for the adempiere store data grpc service.
 * **`AD_STORE_PORT`**: If not set it takes the value of `AD_DEFAULT_PORT`, it is used to indicate the port for the adempiere store data grpc service.
 * **`ES_HOST`**: Indicates the host to point to where the elastic search service is, by default its value is `localhost`.
-* **`ES_PORT`**": Indicates the listening port of the elastic search service to be pointed to, by default its value is `9200`.
-* **`API_URL_IMAGES`**": By default its value is `localhost`.
-* **`API_HTTP_BASED`**": By default its value is `false`.
-* **`STORE_URL_IMAGES`**": By default its value is `localhost`.
-* **`STORE_HTTP_BASED`**": By default its value is `false`.
+* **`ES_PORT`**: Indicates the listening port of the elastic search service to be pointed to, by default its value is `9200`.
+* **`API_URL_IMAGES`**: By default its value is `localhost`.
+* **`API_HTTP_BASED`**: By default its value is `false`.
+* **`STORE_URL_IMAGES`**: By default its value is `localhost`.
+* **`STORE_HTTP_BASED`**: By default its value is `false`.
 * **`AD_TOKEN`**: ADempiere access token.
 * **`AD_STORE_TOKEN`**: Store access token.
