@@ -3,9 +3,9 @@ FROM node:10-alpine3.11
 LABEL maintainer="EdwinBetanc0urt@outlook.com" \
 	description="Proxy ADempiere API RESTful"
 
-ARG	URL_REPO="https://github.com/adempiere/proxy-adempiere-api/archive" \
-	BASE_VERSION="rt-1.9" \
-	REPO_NAME="proxy-adempiere-api"
+ARG BASE_VERSION="rt-1.9"
+ARG URL_REPO="https://github.com/adempiere/proxy-adempiere-api/archive"
+ARG REPO_NAME="proxy-adempiere-api"
 
 # Init ENV with default values
 ENV VS_ENV=prod \
@@ -24,7 +24,7 @@ ENV VS_ENV=prod \
 	STORE_HTTP_BASED="false"
 
 # Add system dependencies
-RUN	echo "nameserver 8.8.8.8" > /etc/resolv.conf && \
+RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf && \
 	rm -rf /var/cache/apk/* && \
 	apk update && \
 	apk upgrade musl && \
