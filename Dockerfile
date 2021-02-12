@@ -18,9 +18,9 @@ RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf && \
 		ca-certificates \
 		wget
 
-ARG BASE_VERSION="rt-2.1"
 ARG URL_REPO="https://github.com/adempiere/proxy-adempiere-api/archive"
 ARG REPO_NAME="proxy-adempiere-api"
+ARG BASE_VERSION="rt-2.1"
 
 # Init ENV with default values
 ENV VS_ENV=prod \
