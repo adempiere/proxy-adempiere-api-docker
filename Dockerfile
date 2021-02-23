@@ -68,4 +68,4 @@ COPY start.sh /var/www/proxy-adempiere-api/
 WORKDIR /var/www/proxy-adempiere-api/
 
 # Start app
-CMD ["sh" "start.sh"]
+CMD	'sh' 'start.sh'
