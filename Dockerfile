@@ -25,7 +25,6 @@ ARG BASE_VERSION="rt-2.1"
 # Init ENV with default values
 ENV VS_ENV=prod \
 	BINARY_NAME="proxy-adempiere-api-$BASE_VERSION" \
-	SERVER_HOST="localhost" \
 	SERVER_PORT=8085 \
 	ES_HOST="localhost" \
 	ES_PORT=9200 \
