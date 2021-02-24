@@ -3,7 +3,7 @@
 # Set enviroment variables to config file default.json
 
 # Set env values to proxy api rest ful
-sed -i "s|SERVER_HOST|$SERVER_HOST|g"  /var/www/proxy-adempiere-api/config/default.json
+sed -i "s|SERVER_HOST|$(hostname)|g"  /var/www/proxy-adempiere-api/config/default.json
 sed -i "s|SERVER_PORT|$SERVER_PORT|g"  /var/www/proxy-adempiere-api/config/default.json
 
 
