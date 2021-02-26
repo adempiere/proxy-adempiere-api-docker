@@ -47,6 +47,7 @@ docker run -it -d \
 	-e AD_DEFAULT_HOST="localhost" \
 	-e AD_DEFAULT_PORT="50059" \
 	-e VS_ENV="dev" \
+	-e RESTORE_DB="Y" \
 	erpya/proxy-adempiere-api
 ```
 
