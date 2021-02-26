@@ -86,6 +86,10 @@ sed -i "s|\"STORE_HTTP_BASED\"|$STORE_HTTP_BASED|g"  /var/www/proxy-adempiere-ap
 sed -i "s|ES_HOST|$ES_HOST|g"  /var/www/proxy-adempiere-api/config/default.json
 sed -i "s|ES_PORT|$ES_PORT|g"  /var/www/proxy-adempiere-api/config/default.json
 
+cd /var/www/proxy-adempiere-api
+if [ "$RESTORE_DB" = 'Y' ]; then
+  yarn restore7
+fi
 
 # Run app
 /usr/local/bin/proxy-api.sh && tail -f /dev/null
