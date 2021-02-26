@@ -87,7 +87,7 @@ sed -i "s|ES_HOST|$ES_HOST|g"  /var/www/proxy-adempiere-api/config/default.json
 sed -i "s|ES_PORT|$ES_PORT|g"  /var/www/proxy-adempiere-api/config/default.json
 
 cd /var/www/proxy-adempiere-api
-if [ "$ISRESTORE_DB" = 'YES' ]; then
+if [ "$RESTORE_DB" = 'Y' ]; then
   yarn restore7
 fi
 
