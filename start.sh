@@ -8,12 +8,10 @@ sed -i "s|SERVER_PORT|$SERVER_PORT|g"  /var/www/proxy-adempiere-api/config/defau
 
 
 # Set env values to grpc access service
-if [ -z "$AD_ACCESS_HOST" ]
-then
+if [ -z "$AD_ACCESS_HOST" ]; then
     AD_ACCESS_HOST=$AD_DEFAULT_HOST
 fi
-if [ -z "$AD_ACCESS_PORT" ]
-then
+if [ -z "$AD_ACCESS_PORT" ]; then
     AD_ACCESS_PORT=$AD_DEFAULT_PORT
 fi
 sed -i "s|AD_ACCESS_HOST|$AD_ACCESS_HOST|g"  /var/www/proxy-adempiere-api/config/default.json
@@ -21,12 +19,10 @@ sed -i "s|AD_ACCESS_PORT|$AD_ACCESS_PORT|g"  /var/www/proxy-adempiere-api/config
 
 
 # Set env values to grpc business data service
-if [ -z "$AD_BUSINESS_HOST" ]
-then
+if [ -z "$AD_BUSINESS_HOST" ]; then
     AD_BUSINESS_HOST=$AD_DEFAULT_HOST
 fi
-if [ -z "$AD_BUSINESS_PORT" ]
-then
+if [ -z "$AD_BUSINESS_PORT" ]; then
     AD_BUSINESS_PORT=$AD_DEFAULT_PORT
 fi
 sed -i "s|AD_BUSINESS_HOST|$AD_BUSINESS_HOST|g"  /var/www/proxy-adempiere-api/config/default.json
@@ -34,42 +30,35 @@ sed -i "s|AD_BUSINESS_PORT|$AD_BUSINESS_PORT|g"  /var/www/proxy-adempiere-api/co
 
 
 # Set env values to grpc dictionary service
-if [ -z "$AD_DICTIONARY_HOST" ]
-then
+if [ -z "$AD_DICTIONARY_HOST" ]; then
     AD_DICTIONARY_HOST=$AD_DEFAULT_HOST
 fi
-if [ -z "$AD_DICTIONARY_PORT" ]
-then
+if [ -z "$AD_DICTIONARY_PORT" ]; then
     AD_DICTIONARY_PORT=$AD_DEFAULT_PORT
 fi
 sed -i "s|AD_DICTIONARY_HOST|$AD_DICTIONARY_HOST|g"  /var/www/proxy-adempiere-api/config/default.json
 sed -i "s|AD_DICTIONARY_PORT|$AD_DICTIONARY_PORT|g"  /var/www/proxy-adempiere-api/config/default.json
 
 
-# Set env values to grpc access store service
-if [ -z "$AD_STORE_ACCESS_HOST" ]
-then
-    AD_STORE_ACCESS_HOST=$AD_DEFAULT_HOST
-fi
-if [ -z "$AD_STORE_ACCESS_PORT" ]
-then
-    AD_STORE_ACCESS_PORT=$AD_DEFAULT_PORT
-fi
-sed -i "s|AD_STORE_ACCESS_HOST|$AD_STORE_ACCESS_HOST|g"  /var/www/proxy-adempiere-api/config/default.json
-sed -i "s|AD_STORE_ACCESS_PORT|$AD_STORE_ACCESS_PORT|g"  /var/www/proxy-adempiere-api/config/default.json
-
-
 # Set env values to grpc store service
-if [ -z "$AD_STORE_HOST" ]
-then
-    AD_STORE_ACCESS_HOST=$AD_DEFAULT_HOST
+if [ -z "$AD_STORE_HOST" ]; then
+    AD_STORE_HOST=$AD_DEFAULT_HOST
 fi
-if [ -z "$AD_STORE_PORT" ]
-then
+if [ -z "$AD_STORE_PORT" ]; then
     AD_STORE_PORT=$AD_DEFAULT_PORT
 fi
 sed -i "s|AD_STORE_HOST|$AD_STORE_HOST|g"  /var/www/proxy-adempiere-api/config/default.json
 sed -i "s|AD_STORE_PORT|$AD_STORE_PORT|g"  /var/www/proxy-adempiere-api/config/default.json
+
+# Set env values to grpc access store service
+if [ -z "$AD_STORE_ACCESS_HOST" ]; then
+    AD_STORE_ACCESS_HOST=$AD_STORE_HOST
+fi
+if [ -z "$AD_STORE_ACCESS_PORT" ]; then
+    AD_STORE_ACCESS_PORT=$AD_STORE_PORT
+fi
+sed -i "s|AD_STORE_ACCESS_HOST|$AD_STORE_ACCESS_HOST|g"  /var/www/proxy-adempiere-api/config/default.json
+sed -i "s|AD_STORE_ACCESS_PORT|$AD_STORE_ACCESS_PORT|g"  /var/www/proxy-adempiere-api/config/default.json
 
 
 sed -i "s|adempiere_token|$AD_TOKEN|g"  /var/www/proxy-adempiere-api/config/default.json
@@ -87,6 +76,7 @@ sed -i "s|ES_HOST|$ES_HOST|g"  /var/www/proxy-adempiere-api/config/default.json
 sed -i "s|ES_PORT|$ES_PORT|g"  /var/www/proxy-adempiere-api/config/default.json
 
 cd /var/www/proxy-adempiere-api
+
 if [ "$RESTORE_DB" = 'Y' ]; then
   yarn restore7
 fi
