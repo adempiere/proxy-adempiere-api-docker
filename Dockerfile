@@ -46,7 +46,6 @@ RUN mkdir -p /var/www/ && \
 		-L "$URL_REPO/$BASE_VERSION.zip" && \
 	unzip -o $BINARY_NAME.zip && \
 	mv $BINARY_NAME $REPO_NAME && \
-	rm $BINARY_NAME.zip && \
 	cd $REPO_NAME && \
 	cp -rf ./packages/default-vsf ./src/modules && \
 	cp ./docker/proxy-api/proxy-api.sh /usr/local/bin/ && \
@@ -57,7 +56,9 @@ RUN mkdir -p /var/www/ && \
 	cp graphql-schema-linter.config.js /var/www/  && \
 	cp tsconfig.build.json /var/www/  && \
 	yarn install --no-cache && \
+	# delete unised files
 	apk del .build-deps && \
+	rm /var/www/$BINARY_NAME.zip && \
 	rm -rf /var/cache/apk/* \
 		/var/lib/apt/list/* \
 		/tmp/*
