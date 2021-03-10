@@ -25,11 +25,12 @@
     "requestTimeout": 5000,
     "min_score": 0.01,
     "indices": [
+      "erp_store",
       "vue_storefront_catalog",
       "vue_storefront_catalog_de",
       "vue_storefront_catalog_it"
     ],
-    "index": "vue_storefront_catalog",
+    "index": "erp_store",
     "apiVersion": "7.2",
 
     "searchScoring": {
