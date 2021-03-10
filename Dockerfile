@@ -36,7 +36,8 @@ ENV VS_ENV=prod \
 	API_HTTP_BASED="false" \
 	STORE_URL_IMAGES="localhost" \
 	STORE_HTTP_BASED="false"\
-	RESTORE_DB="N"
+	RESTORE_DB="N" \
+	INDEX="vue_storefront_catalog"
 
 # Download and uncompress project
 RUN mkdir -p /var/www/ && \
