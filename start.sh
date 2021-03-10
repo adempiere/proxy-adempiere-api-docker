@@ -75,6 +75,9 @@ sed -i "s|\"STORE_HTTP_BASED\"|$STORE_HTTP_BASED|g"  /var/www/proxy-adempiere-ap
 sed -i "s|ES_HOST|$ES_HOST|g"  /var/www/proxy-adempiere-api/config/default.json
 sed -i "s|ES_PORT|$ES_PORT|g"  /var/www/proxy-adempiere-api/config/default.json
 
+# Set indices value
+sed -i "s|vue_storefront_catalog|$INDEX|g"  /var/www/proxy-adempiere-api/config/default.json
+
 cd /var/www/proxy-adempiere-api
 
 if [ "$RESTORE_DB" = 'Y' ]; then
