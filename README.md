@@ -35,8 +35,11 @@ Build docker image:
 ```shell
     docker build -t erpya/proxy-adempiere-api:dev -f ./Dockerfile .
 ```
+### Run with default connection
+For generate your server you should generate a ADempiere Third Party Access token, see the follow image for generate it from ADempiere installed service
+![Generate Token for ADempiere Access](https://user-images.githubusercontent.com/2333092/99605765-bd47a600-29de-11eb-9987-3a7a23f356e3.gif)
 
-### Run with default connection:
+Run Docker Image
 ```shell
 docker run -it -d \
 	--name proxy-adempiere-api \
