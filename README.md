@@ -10,7 +10,7 @@ Proxy ADempiere-API
 <a href="http://slack.vuestorefront.io">![Join Slack](https://img.shields.io/badge/community%20chat-slack-FF1493.svg)</a>
 
 ### What is?
-A simple proxy for synchronize ADempiere Backend based on [ADempiere-gRPC-Server](https://github.com/adempiere/adempiere-gRPC-Server) with any frontend using api REST ans GraphQL.
+A simple proxy for synchronize ADempiere Backend based on [ADempiere-gRPC-Server](https://github.com/adempiere/adempiere-gRPC-Server) with any frontend using RESTful API.
 
 Source repository [Proxy-ADempiere-API](https://github.com/adempiere/proxy-adempiere-api).
 
@@ -30,33 +30,65 @@ docker pull erpya/adempiere-vue
 
 ## Run Docker Container
 
-Build docker image (for development only):
+### For development only
+Build docker image:
 ```shell
     docker build -t erpya/proxy-adempiere-api:dev -f ./Dockerfile .
 ```
 
-Download latest docker image:
-```shell
-    docker pull erpya/proxy-adempiere-api
-```
-
-Run with default connection:
+### Run with default connection:
 ```shell
 docker run -it -d \
-	--name Proxy-ADempiere-API \
+	--name proxy-adempiere-api \
 	-p 8085:8085 \
-	-e AD_DEFAULT_HOST="localhost" \
+	-e AD_DEFAULT_HOST="Your_gRPC_Server_IP" \
 	-e AD_DEFAULT_PORT="50059" \
+	-e AD_TOKEN="Your_ADempiere_Generated_Token" \
 	-e VS_ENV="dev" \
-	-e RESTORE_DB="Y" \
+	-e RESTORE_DB="N" \
 	erpya/proxy-adempiere-api
 ```
 
+## Test service
 
+### Local Service
+A simple test for local service
+```shell
+curl --location --request POST 'http://Your_gRPC_Server_IP:8085/adempiere-api/user/login' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "username": "GardenAdmin",
+    "password": "GardenAdmin"
+}'
+```
+Result
+```shell
+{
+	"code":200,"
+	result":"012c44b6-3ee2-47bd-844e-b1517d405e53"
+}
+```
+
+### Demo service
+A test using API demo
+```shell
+curl --location --request POST 'https://api.erpya.com/adempiere-api/user/login' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "username": "demo",
+    "password": "demo"
+}'
+```
+Result
+```shell
+{
+	"code":200,"
+	result":"c7fcf550-ba93-4a02-968b-3a1712acabec"
+}
+```
 ## Environment variables for the configuration
 
 * **`VS_ENV`**: Indicates the startup mode in which the RESTful proxy service will start, by default its value is `prod`, the other value is `dev`.
-* **`SERVER_PORT`**: Indicates the listening port of the RESTful proxy service, by default its value is `8085`. Make sure that it is set to the same value as the TCP port of the container.
 * **`AD_DEFAULT_HOST`**: Specifies the host to point to the gRPC service, by default its value is `localhost`. All hosts pointing to gRPC services will take the value you set for this environment variable unless you set a value to overwrite the specific service.
 * **`AD_DEFAULT_PORT`**: Specifies the listening port to point to the gRPC service, by default its value is `50059`. All ports to be pointed to from gRPC services will take the value you set for this environment variable unless you set a value to overwrite the specific service.
 * **`AD_ACCESS_HOST`**: If not set it takes the value of `AD_DEFAULT_HOST`, it is used to indicate the host for the adempiere access grpc service.
