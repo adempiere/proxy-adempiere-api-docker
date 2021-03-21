@@ -70,8 +70,8 @@ curl --location --request POST 'http://Your_gRPC_Server_IP:8085/adempiere-api/us
 Result
 ```shell
 {
-	"code":200,"
-	result":"012c44b6-3ee2-47bd-844e-b1517d405e53"
+	"code":200,
+	"result":"012c44b6-3ee2-47bd-844e-b1517d405e53"
 }
 ```
 
@@ -89,8 +89,8 @@ curl --location --request POST 'https://api.erpya.com/adempiere-api/user/login' 
 Result
 ```shell
 {
-	"code":200,"
-	result":"c7fcf550-ba93-4a02-968b-3a1712acabec"
+	"code":200,
+	"result":"c7fcf550-ba93-4a02-968b-3a1712acabec"
 }
 ```
 
