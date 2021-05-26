@@ -291,7 +291,7 @@
         "adempiere/form/addons/point-of-sales"
       ],
       "images": {
-        "baseUrl": "http://API_URL_IMAGES",
+        "baseUrl": "API_URL_IMAGES",
         "httpBased": "API_HTTP_BASED"
       }
     },
@@ -300,7 +300,7 @@
         "web-store-payment"
       ],
       "images": {
-        "baseUrl": "http://STORE_URL_IMAGES",
+        "baseUrl": "STORE_URL_IMAGES",
         "httpBased": "STORE_HTTP_BASED"
       }
     },
