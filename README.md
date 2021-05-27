@@ -19,10 +19,12 @@ Source repository [Proxy-ADempiere-API](https://github.com/adempiere/proxy-ademp
 ```shell
 docker pull erpya/adempiere-grpc-all-in-one
 ```
+
 - Proxy ADempiere API: https://hub.docker.com/r/erpya/proxy-adempiere-api
 ```shell
 docker pull erpya/proxy-adempiere-api
 ```
+
 - ADempiere Vue: https://hub.docker.com/r/erpya/adempiere-vue
 ```shell
 docker pull erpya/adempiere-vue
@@ -64,11 +66,12 @@ curl --location --request POST 'http://Your_gRPC_Server_IP:8085/adempiere-api/us
     "password": "GardenAdmin"
 }'
 ```
+
 Result
 ```shell
 {
-	"code":200,"
-	result":"012c44b6-3ee2-47bd-844e-b1517d405e53"
+	"code":200,
+	"result":"012c44b6-3ee2-47bd-844e-b1517d405e53"
 }
 ```
 
@@ -82,13 +85,15 @@ curl --location --request POST 'https://api.erpya.com/adempiere-api/user/login' 
     "password": "demo"
 }'
 ```
+
 Result
 ```shell
 {
-	"code":200,"
-	result":"c7fcf550-ba93-4a02-968b-3a1712acabec"
+	"code":200,
+	"result":"c7fcf550-ba93-4a02-968b-3a1712acabec"
 }
 ```
+
 ## Environment variables for the configuration
 
 * **`VS_ENV`**: Indicates the startup mode in which the RESTful proxy service will start, by default its value is `prod`, the other value is `dev`.
@@ -106,6 +111,10 @@ Result
 * **`AD_STORE_ACCESS_PORT`**: It is used to indicate the port for the adempiere access store grpc service. If not set it takes the value of `AD_STORE_PORT` (and if that is not defined then it takes the value of `AD_DEFAULT_PORT`).
 * **`ES_HOST`**: Indicates the host to point to where the elastic search service is, by default its value is `localhost`.
 * **`ES_PORT`**: Indicates the listening port of the elastic search service to be pointed to, by default its value is `9200`.
+* **`INDEX`**: Eslastic Search index (is like a ‘database’ in a relational database).
+* **`REDIS_HOST`**: Indicates the host to point to where the redis service is, by default its value is `localhost`.
+* **`REDIS_PORT`**: Indicates the listening port of the redis service to be pointed to, by default its value is `6379`.
+* **`REDIS_DB`**: Indicates the data base to be pointed to, by default its value is `0`.
 * **`API_URL_IMAGES`**: By default its value is `localhost`.
 * **`API_HTTP_BASED`**: By default its value is `false`.
 * **`STORE_URL_IMAGES`**: By default its value is `localhost`.

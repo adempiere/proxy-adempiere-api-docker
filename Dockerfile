@@ -3,7 +3,7 @@ FROM node:10-alpine3.11
 LABEL maintainer="EdwinBetanc0urt@outlook.com" \
 	description="Proxy ADempiere API RESTful"
 
-# Add system dependencies
+# Add operative system dependencies
 RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf && \
 	rm -rf /var/cache/apk/* && \
 	apk update && \
@@ -28,6 +28,9 @@ ENV VS_ENV=prod \
 	SERVER_PORT=8085 \
 	ES_HOST="localhost" \
 	ES_PORT=9200 \
+	REDIS_HOST="localhost" \
+	REDIS_PORT=6379 \
+	REDIS_DB=0 \
 	AD_DEFAULT_HOST="localhost" \
 	AD_DEFAULT_PORT=50059 \
 	AD_TOKEN="adempiere_token" \
