@@ -20,7 +20,7 @@ RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf && \
 
 ARG URL_REPO="https://github.com/adempiere/proxy-adempiere-api/archive"
 ARG REPO_NAME="proxy-adempiere-api"
-ARG BASE_VERSION="rt-4.5"
+ARG BASE_VERSION="rt-4.6"
 
 # Init ENV with default values
 ENV VS_ENV=prod \
