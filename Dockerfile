@@ -4,8 +4,7 @@ LABEL maintainer="EdwinBetanc0urt@outlook.com" \
 	description="Proxy ADempiere API RESTful"
 
 # Add operative system dependencies
-RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf && \
-	rm -rf /var/cache/apk/* && \
+RUN echo rm -rf /var/cache/apk/* && \
 	apk update && \
 	apk upgrade musl && \
 	apk add \
