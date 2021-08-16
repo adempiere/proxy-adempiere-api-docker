@@ -19,7 +19,7 @@ RUN echo rm -rf /var/cache/apk/* && \
 
 ARG URL_REPO="https://github.com/adempiere/proxy-adempiere-api/archive"
 ARG REPO_NAME="proxy-adempiere-api"
-ARG BASE_VERSION="rt-4.7"
+ARG BASE_VERSION="rt-4.8"
 
 # Init ENV with default values
 ENV VS_ENV=prod \
